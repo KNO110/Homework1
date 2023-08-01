@@ -1,1 +1,99 @@
 
+using System;
+
+namespace BasicMathOperations
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Ср. арифм
+            #region Task 1: Finding the Average
+            double num1, num2, num3;
+            Console.WriteLine("Введите три вещественных числа : ");
+            num1 = Convert.ToDouble(Console.ReadLine());
+            num2 = Convert.ToDouble(Console.ReadLine());
+            num3 = Convert.ToDouble(Console.ReadLine());
+            double average = (num1 + num2 + num3) / 3;
+            Console.WriteLine("Среднее ариф. : " + average);
+            #endregion
+
+            // Степень
+            #region Task 2: Stepen
+            double number, exp;
+            Console.WriteLine("Ваше число : ");
+            number = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Введите степень :");
+            exp = Convert.ToDouble(Console.ReadLine());
+            double result = Math.Pow(number, exp);
+            Console.WriteLine("Выходит : " + result + " ежа");
+            #endregion
+
+            // Конвертация гривен в доллары и ойро
+            #region Task 3: Currency Conversion
+            double uah, usdRate, eurRate;
+            Console.WriteLine("Кол-во гривен:");
+            uah = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Курс доллара:");
+            usdRate = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Курс евро:");
+            eurRate = Convert.ToDouble(Console.ReadLine());
+            double usd = uah / usdRate;
+            double eur = uah / eurRate;
+            Console.WriteLine("В долларах: " + usd);
+            Console.WriteLine("В ойро: " + eur);
+            #endregion
+
+            // Конвертация километров в сухопутные и морские мили
+            #region Task 4: Distance Conversion
+            double km;
+            Console.WriteLine("Введите количество километров:");
+            km = Convert.ToDouble(Console.ReadLine());
+            double Miles = km * 0.621371;
+            double waterMiles = km * 0.539957;
+            Console.WriteLine("Сухопутные мили: " + Miles);
+            Console.WriteLine("Морские мили: " + waterMiles);
+            #endregion
+
+            // Нахождение процента числа
+            #region Task 5: Percentage Calculation
+            double n, percent;
+            Console.WriteLine("Введите число:");
+            n = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Введите процент:");
+            percent = Convert.ToDouble(Console.ReadLine());
+            double resultPercent = (percent / 100) * n;
+            Console.WriteLine("Результат: " + resultPercent);
+            #endregion
+
+            // Конвертация градусов Цельсия в градусы Фаренгейта и наоборот
+            #region Task 6: Temperature Conversion
+            Console.WriteLine("Выберите действие:");
+            Console.WriteLine("1) Перевести градусы Цельсия в градусы Фаренгейта");
+            Console.WriteLine("2) Перевести градусы Фаренгейта в градусы Цельсия");
+            int choice = Convert.ToInt32(Console.ReadLine());
+
+            switch (choice)
+            {
+                case 1:
+                    Console.WriteLine("Введите градусы Цельсия:");
+                    double cels = Convert.ToDouble(Console.ReadLine());
+                    double far = (cels * 9 / 5) + 32;
+                    Console.WriteLine("Градусы Фаренгейта: " + far);
+                    break;
+                case 2:
+                    Console.WriteLine("Введите градусы Фаренгейта:");
+                    double far_int = Convert.ToDouble(Console.ReadLine());
+                    double cels_out = (far_int - 32) * 5 / 9;
+                    Console.WriteLine("Градусы Цельсия: " + cels_out);
+                    break;
+                default:
+                    Console.WriteLine("Некорректный выбор.");
+                    break;
+            }
+            #endregion
+
+            Console.ReadLine();
+        }
+    }
+}
